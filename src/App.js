@@ -12,7 +12,7 @@ const routes = (
   <Header/>
   <Switch>
   <Route exact={true} path="/" component={Home}/>
-  <Route path="/explore" component={Explore}/>
+  <Route exact={false} path="/explore" component={Explore}/>
   </Switch>
   </BrowserRouter>
   );

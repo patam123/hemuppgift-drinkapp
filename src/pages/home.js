@@ -1,6 +1,5 @@
 import React from 'react';
 import "../design/home.css"
-import Header from "../components/header";
 import Image from "../images/cocktail.png";
 
 const Home = () => {
