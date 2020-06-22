@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./pages/home";
 import Explore from "./pages/explore";
 import Header from "./components/header";
+import Drink from "./pages/drink"
 
 
 
@@ -12,7 +13,8 @@ const routes = (
   <Header/>
   <Switch>
   <Route exact={true} path="/" component={Home}/>
-  <Route exact={false} path="/explore" component={Explore}/>
+  <Route exact={true} path="/explore" component={Explore}/>
+  <Route path="/explore/:name" component={Drink} />
   </Switch>
   </BrowserRouter>
   );

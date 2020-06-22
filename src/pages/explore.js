@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import SearchForm from "../components/searchform";
+import React, {useState} from 'react';
 import drinks from "../data/drinks.json";
-import { useHistory } from "react-router-dom";
 import Card from "../components/card";
 import "../design/explore.css"
 
@@ -10,28 +8,21 @@ const Explore = () => {
 
     const [searchChars, setSearchChars] = useState();
     const [filteredDrinks, setFilteredDrinks] = useState();
-    const history = useHistory();
 
     const search = (e) => {
         let drinkFilter = drinks.cocktails.filter(elem => (elem.name.toLocaleLowerCase().includes(e)));
         setFilteredDrinks(drinkFilter);
-        console.log(drinkFilter);
     }
     const content = () => {
-        return filteredDrinks.map(drink => (
-            <Card name={drink.name} image={drink.image}/>
+        return filteredDrinks.map((drink, index)=> (
+            <Card key={index} description={drink.preparation} name={drink.name} image={drink.image}/>
         ))
     }
-    // useEffect(() => {
-        
-    //     ))
-    // },[])
+  
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("hejhej")
         search(searchChars);
-        // history.push("/explore/99")
     }
 
     return (

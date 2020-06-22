@@ -1,11 +1,12 @@
 import React from 'react';
 
 
-const Drink = ({name, image, description}) => {
+const Drink = (props) => {
     return(
         <div >
-        <p>{name}</p>
-        <img src={image} alt={name}></img>
+        <p>{props.match.params.name}</p>
+        <p>{props.location.description}</p>
+        <img src={props.location.image} alt={props.match.params.name}></img>
         </div>
     );
 }
